@@ -1,0 +1,17 @@
+# Rest API - Express JS & MYSQL
+## Fitur
+1. Login
+2. Register
+3. Verify (PIN)
+
+### Mysql
+#### Buat akun dan database MongoDb
+Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti nanti .env nya.
+
+#### Edit .env
+
+### Instal Dependensi
+#### Npm
+```bash
+npm app.js / nodemon
+```
