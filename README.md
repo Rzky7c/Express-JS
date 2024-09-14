@@ -24,7 +24,7 @@ The module is now available on npm! `npm i whatsapp-web.js`
 ### Windows
 
 #### Manual
-Just get the latest LTS from the [official node website][nodejs].
+Just get the latest LTS from the [[official node website](https://nodejs.org/en)][[nodejs](https://nodejs.org/en)].
 
 #### npm
 ```powershell
