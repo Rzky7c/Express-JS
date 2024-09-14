@@ -11,10 +11,41 @@ Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti na
 
 #### Edit .env
 
-### Instal Dependensi
-#### Npm
+
+## Installation
+
+The module is now available on npm! `npm i whatsapp-web.js`
+
+> [!NOTE]
+> **Node ``v18+`` is required.**
+
+## QUICK STEPS TO UPGRADE NODE
+
+### Windows
+
+#### Manual
+Just get the latest LTS from the [official node website][nodejs].
+
+#### npm
+```powershell
+sudo npm install -g n
+sudo n stable
+```
+
+#### Choco
+```powershell
+choco install nodejs-lts
+```
+
+#### Winget
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+### Ubuntu / Debian
 ```bash
-npm install
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
 <div align="center">
