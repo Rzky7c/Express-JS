@@ -5,7 +5,6 @@
 3. Verify (PIN)
 
 ### Mysql
-#### Buat akun dan database MongoDb
 Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti nanti .env nya.
 
 #### Edit .env
