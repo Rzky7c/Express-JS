@@ -12,5 +12,5 @@ Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti na
 ### Instal Dependensi
 #### Npm
 ```bash
-npm app.js / nodemon
+npm install
 ```
