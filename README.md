@@ -1,8 +1,10 @@
 # Rest API - Express JS & MYSQL
 ## Fitur
-1. Login
-2. Register
-3. Verify (PIN)
+| Feature  | Status |
+| ------------- | ------------- |
+| Login  | ✅  |
+| Register  | ✅  |
+| Verify (PIN)  | ✅  |
 
 ### Mysql
 Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti nanti .env nya.
