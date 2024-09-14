@@ -9,7 +9,8 @@
 ### Mysql
 Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti nanti .env nya.
 
-#### Edit .env
+> [!NOTE]
+> ** Jangan lupa untuk mengubah isi file ``.env``**
 
 
 ## Installation
