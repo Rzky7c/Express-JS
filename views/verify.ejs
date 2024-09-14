@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .pin-input {
+            width: 3rem;
+            height: 3rem;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .pin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Verification</h1>
+        <% if (message) { %>
+            <p style="color: red; text-align: center;"><%= message %></p>
+        <% } %>
+        <form action="/auth/verify" method="POST" id="verifyForm">
+            <input type="hidden" name="email" value="<%= email %>" />
+            <div class="pin-container">
+                <input type="text" maxlength="1" class="pin-input" name="pin1" required />
+                <input type="text" maxlength="1" class="pin-input" name="pin2" required />
+                <input type="text" maxlength="1" class="pin-input" name="pin3" required />
+                <input type="text" maxlength="1" class="pin-input" name="pin4" required />
+                <input type="text" maxlength="1" class="pin-input" name="pin5" required />
+                <input type="text" maxlength="1" class="pin-input" name="pin6" required />
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Verify</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pinInputs = document.querySelectorAll('.pin-input');
+            pinInputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length === 1 && index < pinInputs.length - 1) {
+                        pinInputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && input.value === '' && index > 0) {
+                        pinInputs[index - 1].focus();
+                    }
+                });
+            });
+
+            const form = document.getElementById('verifyForm');
+            form.addEventListener('submit', (e) => {
+                let pin = '';
+                pinInputs.forEach(input => {
+                    pin += input.value;
+                });
+                
+                const fullPinInput = document.createElement('input');
+                fullPinInput.type = 'hidden';
+                fullPinInput.name = 'pin';
+                fullPinInput.value = pin;
+                form.appendChild(fullPinInput);
+            });
+        });
+    </script>
+</body>
+</html>

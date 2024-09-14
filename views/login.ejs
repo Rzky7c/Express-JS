@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Include External CSS -->
+    <link rel="stylesheet" href="/css/styles.css">  
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <% if (message) { %>
+            <p class="error-message"><%= message %></p>
+        <% } %>
+        <form action="/auth/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="register-link">Belum punya akun? <a href="/auth/register">Klik di sini untuk register</a>.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('register') === 'success') {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Registration successful. Please check your email for verification.',
+                    icon: 'success'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
