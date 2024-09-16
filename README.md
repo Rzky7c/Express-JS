@@ -15,7 +15,7 @@ Silahkan anda membuat mysql di hosting / localhost yang anda punya lalu ganti na
 
 ## Installation
 
-The module is now available on npm! `npm i whatsapp-web.js`
+The module is now available on npm! `npm i`
 
 > [!NOTE]
 > **Node ``v18+`` is required.**
